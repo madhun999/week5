@@ -1,0 +1,123 @@
+﻿<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Inputs Page - Homework 5</title>
+
+  <link rel="stylesheet" href="Styles/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head> 
+
+<body class="page" id="top"> 
+
+  <div class="container">
+    <header>
+      <h1>Inputs Page - Homework 5</h1>
+    </header>
+
+    <form class="form" role="form">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th class="col-xs-3">Control Type</th>
+            <th class="col-xs-3">Control</th>
+            <th class="col-xs-6">Value Entered</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td class="col-xs-3">input type="checkbox"</td>
+            <td class="col-xs-3">
+              <input type="checkbox" id="chk1" name3="chk1" onchange="OnChk1Changed();" />&nbsp;A Checkbox!
+            </td>
+            <td class="col-xs-6"> <label id="chk1_value" name="chk1_value"></label> </td>
+          </tr>
+
+          <tr>
+            <td class="col-xs-3">input type="radio"</td>
+            <td class="col-xs-3">
+              <input type="radio" id="rad1" name="rad1" value="Greek" onclick="OnRad1Changed();" />&nbsp;Greek<br />
+              <input type="radio" id="rad1" name="rad1" value="Roman" onclick="OnRad1Changed();" />&nbsp;Roman<br />
+              <input type="radio" id="rad1" name="rad1" value="Carolingian" onclick="OnRad1Changed();" />&nbsp;Carolingian<br />
+              <input type="radio" id="rad1" name="rad1" value="Romanesque" onclick="OnRad1Changed();" />&nbsp;Romanesque<br />
+              <input type="radio" id="rad1" name="rad1" value="Gothic" onclick="OnRad1Changed();" />&nbsp;Gothic<br />
+              <input type="radio" id="rad1" name="rad1" value="Baroque" onclick="OnRad1Changed();" />&nbsp;Baroque<br />
+              <input type="radio" id="rad1" name="rad1" value="Renaissance" onclick="OnRad1Changed();" />&nbsp;Renaissance<br />
+              <input type="radio" id="rad1" name="rad1" value="Modern" onclick="OnRad1Changed();" />&nbsp;Modern<br />
+            </td>
+            <td class="col-xs-6"> <label id="rad1_value" name="rad1_value"></label> </td>
+          </tr>
+
+          <tr>
+            <td class="col-xs-3">input type="text"</td>
+            <td class="col-xs-3">
+              <input type="text" id="txt1" name="txt1" onchange="OnTxt1Changed();" />
+            </td>
+            <td class="col-xs-6"> <lable id="txt1_value" name="txt1_value"></lable> </td>
+          </tr>
+
+          <tr>
+            <td class="col-xs-3">textarea</td>
+            <td class="col-xs-3">
+              <textarea class="form-control" id="ta1" name="ta1" multiple onchange="OnTa1Changed();"></textarea>
+            </td>
+            <td class="col-xs-6"> <label id="ta1_value" name="ta1_value"></label> </td>
+          </tr>
+
+          <tr>
+            <td class="col-xs-3">select</td>
+            <td class="col-xs-3">
+              <select id="sel1" name="sel1" onchange="OnSel1Changed();">
+                <option value="Red">Red</option>
+                <option value="Green">Green</option>
+                <option value="Blue">Blue</option>
+                <option value="Burnt Umber">Burnt Umber</option>
+              </select>
+            </td>
+            <td class="col-xs-6"> <label id="sel1_value" name="sel1_value"></label> </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+
+
+
+  <script>
+    OnChk1Changed();
+    OnRad1Changed();
+    OnTxt1Changed();
+    OnTa1Changed();
+    OnSel1Changed();
+
+    function OnChk1Changed() {
+      $("#chk1_value").text( $("#chk1").prop('checked') );
+    }
+
+    function OnRad1Changed() {
+      var txt = $("input[name='rad1']:checked").val();
+      $("#rad1_value").text( txt );
+    }
+
+    function OnTxt1Changed() {
+      var txt = $("#txt1").val();
+      $("#txt1_value").text( txt );
+    }
+
+    function OnTa1Changed() {
+      var txt = $("#ta1").val();
+      $("#ta1_value").text(txt);
+    }
+
+    function OnSel1Changed() {
+      var txt = $("#sel1").val();
+      $("#sel1_value").text(txt);
+    }
+  </script>
+
+</body>
+</html>
